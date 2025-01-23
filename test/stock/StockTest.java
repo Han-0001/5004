@@ -15,4 +15,10 @@ public class StockTest {
     assertEquals("Apple Inc.", stock.getName());
     assertEquals(150.0, stock.getCostBasis());
   }
+
+  @Test
+  public void testGetSymbol() {
+  Stock stock = new Stock("IBM", "International Business Machines", 150.0);
+  assertEquals("IBM", stock.getSymbol());
+  }
 }

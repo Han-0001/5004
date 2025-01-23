@@ -10,33 +10,26 @@ public class Stock {
   private double cost_Basis;
   private double CurrentPrice;
 
-  public Stock(String name, String symbol,double cost_Basis) {
+  public Stock(String symbol, String name, double cost_Basis) {
     this.symbol = symbol;
     this.name = name;
     this.cost_Basis = cost_Basis;
   }
 
-  // SETTER METHODS AND GETTER METHODS
-  public String getName() {return name; }
-  public String getSymbol() {return symbol; }
-  public double getCostBasis() {return cost_Basis; }
-  public double getCurrentPrice() {return CurrentPrice; }
+  public String getName() { return name; }
+  public String getSymbol() { return symbol; }
+  public double getCostBasis() { return cost_Basis; }
+  public double getCurrentPrice() { return CurrentPrice; }
 
-  public void setCostBasis(double cost_Basis) {
-    this.cost_Basis = cost_Basis; }
-  public void setCurrentPrice(double CurrentPrice) {
-    this.CurrentPrice = CurrentPrice;
-  }
+  public void setCostBasis(double cost_Basis) { this.cost_Basis = cost_Basis; }
+  public void setCurrentPrice(double CurrentPrice) { this.CurrentPrice = CurrentPrice; }
 
-  // Calculation method to get the percentage change
   public double getChangePercent() {
-    return (CurrentPrice-cost_Basis)/cost_Basis;
+    return (CurrentPrice - cost_Basis) / cost_Basis;
   }
 
-  // String representation of the Stock instance
   public String toString() {
     return String.format("%s Current Price: $ %.2f\n Gain/Loss: %.2f%%",
         name, CurrentPrice, getChangePercent() * 100);
   }
-
 }
